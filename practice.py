@@ -18,17 +18,16 @@ def output_stats(list):
 def display_csv_reader():
 
     # Create a file in directory 
-    """ 
-    filepath = os.path.join('c:/your/full/path', 'filename')
-    if not os.path.exists('c:/your/full/path'):
-        os.makedirs('c:/your/full/path')
-    f = open(filepath, "a") 
-    """
+    
+    prompt = "Please enter the name of the File\n"
 
-    # Read in the fie
-    csv = 'Day 14/sample_grades.csv'
+    filename = input(prompt)
+    filepath = os.path.join('c://Users/jfraser/Desktop/Joy_Projects/', filename)
+    if not os.path.exists('c://Users/jfraser/Desktop/Joy_Projects/'):
+        os.makedirs('c://Users/jfraser/Desktop/Joy_Projects/')
+    
 
-    with open(csv) as data_file:
+    with open(filepath, "a") as data_file:
         for line in data_file:
             list = line.rstrip().rsplit(',')
             if list[1] == 'Spring 2016':
